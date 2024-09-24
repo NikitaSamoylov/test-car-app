@@ -1,8 +1,13 @@
 import { Toaster } from 'react-hot-toast';
 import { SignOutBtn } from '../SignOutBtn';
+import { SignInBtn } from '../SignInBtn';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth';
 import styles from './Header.module.scss';
 
-const Header: React.FC = () => {
+const Header: React.FC = async () => {
+  const session = await getServerSession(authOptions);
+
   return (
     <header className={styles.header}>
       <div className="container">
@@ -10,7 +15,12 @@ const Header: React.FC = () => {
           <h1 className={styles.header__title}>
             Car App
           </h1>
-          <SignOutBtn/>
+          {
+            session 
+            ? <SignOutBtn/>
+            : <SignInBtn/>
+            }
+
         </div>
         <Toaster
           position="top-center"

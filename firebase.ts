@@ -1,12 +1,14 @@
 import { initializeApp } from "firebase/app";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGE_SENDER_ID,
-  appId: process.env.APP_ID
+  apiKey: "AIzaSyDdcR0wzzAjvMmcLfectsaNmOX7A7Y5wZ8",
+  authDomain: "car-app-de812.firebaseapp.com",
+  projectId: "car-app-de812",
+  storageBucket: "car-app-de812.appspot.com",
+  messagingSenderId: "488118300516",
+  appId: "1:488118300516:web:a0d95b4aeac1d637ac9471"
 };
 
 const app = initializeApp(firebaseConfig);
+export const ImgStorage = getStorage(app);
