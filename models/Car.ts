@@ -4,15 +4,25 @@ const { Schema } = mongoose;
 
 const CarSchema = new Schema(
   {
-    title: {
+    images: [
+      {
+        link: String,
+        name: String
+      }
+    ],
+    brand: {
       type: String,
-      minLength: [2, "имя от 2 символов"],
-      required: [true, "введите название"],
+      required: [true, "введите бренд"],
       trim: true,
     },
-    description: {
+    model: {
       type: String,
-      minLength: [2, "от 2 символов"],
+      required: [true, "введите модель"],
+      trim: true,
+    },
+    color: {
+      type: String,
+      required: [true, "введите цвет"],
       trim: true,
     },
     price: {
@@ -20,28 +30,21 @@ const CarSchema = new Schema(
       required: [true, "введите цену"],
       min: [1, "не меньше 1"],
     },
-    sizes: [
-      {
-        type: String,
-        required: [true, "выберите размеры"],
-      }
-    ],
-    brand: {
-      type: String
+    year: {
+      type: Number,
+      required: [true, "введите год выпуска"],
+      min: [2, "не меньше 2"],
     },
-    category: {
+    engine: {
       type: String,
-      required: [true, "выберите категорию"],
-      trim: true,
+      required: [true, "введите тип двигателя"],
     },
-    images: [
-      {
-        link: String,
-        name: String
-      }
-    ],
-    inStock: {
-      type: Boolean,
+    transmission: {
+      type: String,
+      required: [true, "введите тип трансмиссии"],
+    },
+    range: {
+      type: String,
     },
   },
   { timestamps: true }

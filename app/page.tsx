@@ -1,10 +1,7 @@
 import styles from "./page.module.scss";
 
 const Home = () => {
-  return (
-    <div className={styles.page}>
-    </div>
-  );
+  return <div className="container"></div>;
 };
 
 export default Home;

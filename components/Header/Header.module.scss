@@ -1,7 +1,14 @@
 .header {
+  
   text-align: center;
   padding: 25px 15px;
-  background-color: rgb(192, 243, 245);
-  border-radius: 15px;
-  margin-top: 15px;
+  background-color: rgb(72, 147, 209);
+  margin-bottom: 50px;
+  color: white;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
