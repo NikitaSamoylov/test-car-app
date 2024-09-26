@@ -1,25 +1,24 @@
 export type TCarImages = {
-    link: string;
-    name: string;
-  };
-  
-  export type TCar = {
-    userId?: string;
-    _id: string;
-    brand: string;
-    price: number;
-    model: string;
-    color: string;
-    year: number;
-    engine: string;
-    transmission: string;
-    range: string;
-    images?: TCarImages[];
-  };
-  
-  export type TCarForUpload = TCar & {
-    createdAt: string;
-    updatedAt: string;
-    _v: number;
-  };
-  
+  link: string;
+  name: string;
+};
+
+export type TCar = {
+  _id: string;
+  uniqueId: string;
+  carid: string;
+  brand: string;
+  price: string;
+  model: string;
+  color: string;
+  year: string;
+  engine: string;
+  transmission: string;
+  range: string;
+  images: TCarImages[];
+};
+
+export type TCarFromServer = {
+  product: TCar[];
+};
+

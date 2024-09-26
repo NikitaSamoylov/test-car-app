@@ -1,0 +1,51 @@
+.car {
+  margin-bottom: 50px;
+
+  &__content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__img {
+    margin-bottom: 15px;
+    margin-right: 30px;
+  }
+
+  &__title {
+    margin-bottom: 15px;
+  }
+
+  &__title_item {
+    font-size: 2.2rem;
+    margin-right: 5px;
+  }
+
+  &__description_item {
+    font-size: 1.6rem;
+  }
+
+  &__description_item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 910px) {
+    &__img {
+      margin-right: 0;
+    }
+
+    &__content {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__description_item {
+      text-align: center;
+    }
+  }
+}

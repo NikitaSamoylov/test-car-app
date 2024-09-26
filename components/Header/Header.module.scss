@@ -1,5 +1,4 @@
 .header {
-  
   text-align: center;
   padding: 25px 15px;
   background-color: rgb(72, 147, 209);
@@ -10,5 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  &__btns {
+    margin-right: 10px;
+    margin-bottom: 5px;
   }
 }

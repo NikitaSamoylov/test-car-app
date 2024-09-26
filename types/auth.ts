@@ -10,4 +10,3 @@ export type AuthUser = {
 export type TAuthSessionUser = {
   user: AuthUser;
 };
-  

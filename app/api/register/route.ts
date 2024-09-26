@@ -32,8 +32,6 @@ export const POST = async (request: any) => {
       { status: 200 }
     );
   } catch (err: any) {
-    return NextResponse.json({ msg: err.message },
-      { status: 500, }
-    );
+    return NextResponse.json({ msg: err.message }, { status: 500 });
   }
 };

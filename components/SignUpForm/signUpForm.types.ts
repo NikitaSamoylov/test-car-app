@@ -4,4 +4,3 @@ export type TInputsSignup = {
   password: string;
   confirmPassword: string;
 };
-
