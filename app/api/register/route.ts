@@ -1,10 +1,10 @@
+import { NextRequest, NextResponse } from "next/server";
 import User from "@/models/User";
 import connect from "@/dbConnect";
 import bcrypt from "bcryptjs";
-import { NextResponse } from "next/server";
 
-export const POST = async (request: any) => {
-  const { email, username, password, role } = await request.json();
+export const POST = async (request: NextRequest) => {
+  const { email, username, password } = await request.json();
 
   await connect();
 
@@ -22,7 +22,6 @@ export const POST = async (request: any) => {
     email,
     username,
     password: hashedPassword,
-    role,
   });
 
   try {
