@@ -1,13 +1,15 @@
 "use client";
+
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { TInputsSignup } from "./signUpForm.types";
 import { useRouter } from "next/navigation";
 import { notifyInfo } from "@/utils/notify";
-import styles from './SignUpForm.module.scss';
+import styles from "./SignUpForm.module.scss";
 
-import authImg from '@/assets/images/authImg.jpg';
+import authImg from "@/assets/images/authImg.jpg";
 
 const SignUpForm: React.FC = () => {
   const router = useRouter();
@@ -24,7 +26,7 @@ const SignUpForm: React.FC = () => {
 
   const onSubmit = async (data: TInputsSignup) => {
     try {
-      const resp = await fetch("/api/register", {
+      const resp = await axios.post("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,7 +35,6 @@ const SignUpForm: React.FC = () => {
           username: data.username,
           email: data.email,
           password: data.password,
-          role: "user",
         }),
       });
 
@@ -42,12 +43,12 @@ const SignUpForm: React.FC = () => {
       }
 
       if (resp.status === 200) {
-        notifyInfo('Аккаунт создан, войдите')
+        notifyInfo("Аккаунт создан, войдите");
         reset();
         router.push("/login");
       }
     } catch (e: any) {
-      notifyInfo(e)
+      notifyInfo(e);
     }
   };
 
@@ -57,7 +58,7 @@ const SignUpForm: React.FC = () => {
         <Image
           src={authImg}
           width={authImg.width}
-          height={ authImg.height }
+          height={authImg.height}
           alt="фоновая картинка"
           priority
         />

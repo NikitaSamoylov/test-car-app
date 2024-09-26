@@ -1,0 +1,23 @@
+.car {
+  cursor: pointer;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 350px;
+    margin-top: 15px;
+  }
+
+  &__img {
+    border-radius: 10px;
+  }
+
+  &__info {
+    font-size: 1.6rem;
+  }
+
+  &__info:not(:last-child) {
+    margin-right: 10px;
+  }
+}

@@ -8,12 +8,15 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       required: [true, "введите email"],
-      match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "неверный email"]
+      match: [
+        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+        "неверный email",
+      ],
     },
     username: {
       type: String,
       minLength: [2, "имя от 2 символов"],
-      maxLength: [30, "не больше 30 символов"]
+      maxLength: [30, "не больше 30 символов"],
     },
     password: {
       type: String,

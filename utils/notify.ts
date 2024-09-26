@@ -1,9 +1,5 @@
-import toast from 'react-hot-toast';
-
-export const notifyError = (e: Error) => {
-  toast(e.message)
-};
+import toast from "react-hot-toast";
 
 export const notifyInfo = (e: string) => {
-  toast(e)
+  toast(e);
 };
