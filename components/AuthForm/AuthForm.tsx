@@ -38,7 +38,8 @@ const AuthForm: React.FC = () => {
       }
 
       if (res?.status === 401) {
-        throw new Error("неверный логин или пароль");
+        console.log(res?.status)
+        notifyInfo("неверный логин или пароль");
       }
 
       if (res?.status !== 200 && res?.status !== 401) {
@@ -46,6 +47,7 @@ const AuthForm: React.FC = () => {
       }
     } catch (e: any) {
       notifyInfo(e);
+      console.log(e)
     }
   };
 
