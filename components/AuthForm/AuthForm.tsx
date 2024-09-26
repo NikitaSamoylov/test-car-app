@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/react";
 import { TInputsLogin } from "./AuthForm.types";
-import { notifyError, notifyInfo } from "@/utils/notify";
+import { notifyInfo } from "@/utils/notify";
 import styles from "./AuthForm.module.scss";
 
 import authImage from "@/assets/images/authImg.jpg";
@@ -45,7 +45,7 @@ const AuthForm: React.FC = () => {
         throw new Error("что-то пошло не так");
       }
     } catch (e: any) {
-      notifyError(e);
+      notifyInfo(e);
     }
   };
 
