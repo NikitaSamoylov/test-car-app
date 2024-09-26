@@ -38,6 +38,7 @@ const CarsList: React.FC = () => {
   };
 
   const getItems = () => {
+    console.log('promiseall')
     const carsColors = "/api/cars-colors";
     const carsBrands = "/api/cars-brands";
     const carsItems = `/api/new-car?page=${skip}&limit=${LIMIT}`;
