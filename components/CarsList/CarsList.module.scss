@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 100px;
@@ -36,6 +36,9 @@
     display: flex;
     align-items: center;
     font-size: 1.6rem;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
   }
 
   &__reset {
