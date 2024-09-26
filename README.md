@@ -19,7 +19,7 @@ NEXTAUTH_SECRET=cg0nq478BmNOoaQkUMaEutJxdn3hXjadvMZBYcOSt0Y=
 npm i
 npm run dev
 
-Deploy: https://test-car-app.vercel.app/add-car
+Deploy: https://test-car-app.vercel.app
 Исходники: https://github.com/NikitaSamoylov/test-car-app
 
 Затраченное время: 3 полнорабочих дня или 3 сторипоинта (по 8 часов).
