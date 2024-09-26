@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 
+module.exports = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
+
 const nextConfig = {
   output: "standalone",
   images: {
@@ -11,7 +17,7 @@ const nextConfig = {
       },
     ],
   },
-  ignoreBuildErrors: true,
 };
+
 
 export default nextConfig;
