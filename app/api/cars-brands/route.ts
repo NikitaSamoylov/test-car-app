@@ -9,3 +9,5 @@ export const GET = async () => {
 
   return NextResponse.json({ product }, { status: 200 });
 };
+
+export const revalidate = 0;
