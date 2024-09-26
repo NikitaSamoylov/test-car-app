@@ -22,4 +22,8 @@ npm run dev
 Deploy: https://test-car-app.vercel.app
 Исходники: https://github.com/NikitaSamoylov/test-car-app
 
+Данные для входа:
+email: admin@mail.ru
+пароль: admin01
+
 Затраченное время: 3 полнорабочих дня или 3 сторипоинта (по 8 часов).
