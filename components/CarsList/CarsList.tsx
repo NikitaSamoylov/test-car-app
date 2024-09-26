@@ -103,25 +103,37 @@ const CarsList: React.FC = () => {
     setPriceValue(value === "по возрастанию" ? "asc" : "desc");
   };
 
-  const carsBrandOptions = Array.from(
-    new Set(brandsList.map((n) => n.brand)),
-    (n) => brandsList.find((m) => m.brand === n)
-  ).map((item) => {
-    return {
-      label: item!.brand,
-      value: item!.brand,
-    };
-  });
+  const carsBrandOptions = [{label: "все", value: ""}].concat(Array.from(
+      new Set(brandsList.map((n) => n.brand)),
+      (n) => brandsList.find((m) => m.brand === n)
+    ).map((item) => {
+      return {
+        label: item!.brand,
+        value: item!.brand,
+      }
+    })
+  );
 
-  const carsColorsOptions = Array.from(
-    new Set(colorsList.map((n) => n.color)),
-    (n) => colorsList.find((m) => m.color === n)
-  ).map((item) => {
-    return {
-      label: item!.color,
-      value: item!.color,
-    };
-  });
+  // const cv = Array.from(
+  //   new Set(brandsList.map((n) => n.brand)),
+  //   (n) => brandsList.find((m) => m.brand === n)
+  // ).map((item) => {
+  //   return {
+  //     label: item!.brand,
+  //     value: item!.brand,
+  //   };
+  // });
+
+  const carsColorsOptions = [{ label: "все", value: "" }].concat(
+    Array.from(new Set(colorsList.map((n) => n.color)), (n) =>
+      colorsList.find((m) => m.color === n)
+    ).map((item) => {
+      return {
+        label: item!.color,
+        value: item!.color,
+      };
+    })
+  );
 
   const handleColorFilter = (value: string) => {
     setColorFilter(value);
