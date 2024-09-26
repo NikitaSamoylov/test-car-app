@@ -25,31 +25,30 @@ const SignUpForm: React.FC = () => {
   });
 
   const onSubmit = async (data: TInputsSignup) => {
-    try {
-      const resp = await axios.post("/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+    axios
+      .post(
+        "/api/register",
+        {
+          username: data.username.trim(),
+          email: data.email.trim(),
+          password: data.password.trim(),
         },
-        body: JSON.stringify({
-          username: data.username,
-          email: data.email,
-          password: data.password,
-        }),
-      });
-
-      if (resp.status === 400) {
-        throw new Error("такой email уже есть");
-      }
-
-      if (resp.status === 200) {
+      )
+      .then(() => {
         notifyInfo("Аккаунт создан, войдите");
         reset();
         router.push("/login");
-      }
-    } catch (e: any) {
-      notifyInfo(e);
-    }
+      })
+      .catch(function (error) {
+        if (error.response) {
+          if (error.response.status == 400) {
+            notifyInfo("такой email уже есть");
+          }
+          else {
+            notifyInfo("Ошибка, попробуйте снова")
+          }
+        } 
+      });
   };
 
   return (
