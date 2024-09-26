@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Реализовано:
+*загрузка данных с сервера;
+*серверная пагинация, сортировка и фильтрация;
+*переход на страницу выбранного автомобиля с подробной информацией;
+*регистрация и авторизация, обработка неверного ввода email или пароля при авторизации, проверка пользователя на уже существующего в базе данных;
+*загрузка нового автомобиля возможна только авторизованным пользователем;
+*форма для добавления нового авто с валидацией и загрузкой изображений;
+*добавленный автомобиль сохраняется в базе данных и доступен для просмотра любым пользователем;
 
-## Getting Started
 
-First, run the development server:
+Запуск:
 
-```bash
+git clone https://github.com/NikitaSamoylov/test-car-app.git
+Далее нужно создать в корне файл .env и вставить данные:
+MONGODB_URI=mongodb+srv://nsam7655:rq0QDxoB7HaRydDO@cluster0.jvsi5.mongodb.net/
+и
+NEXTAUTH_SECRET=cg0nq478BmNOoaQkUMaEutJxdn3hXjadvMZBYcOSt0Y=
+Далее:
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deploy: https://test-car-app.vercel.app/add-car
+Исходники: https://github.com/NikitaSamoylov/test-car-app
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Затраченное время: 3 полнорабочих дня или 3 сторипоинта (по 8 часов).
