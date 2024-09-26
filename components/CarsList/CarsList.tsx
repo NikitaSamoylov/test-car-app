@@ -43,7 +43,11 @@ const CarsList: React.FC = () => {
     const carsItems = `/api/new-car?page=${skip}&limit=${LIMIT}`;
 
     axios
-      .all([axios.get(carsColors), axios.get(carsBrands), axios.get(carsItems)])
+      .all([
+        axios.get(carsColors, { headers: { "Cache-Control": "no-cache" } }),
+        axios.get(carsBrands, { headers: { "Cache-Control": "no-cache" } }),
+        axios.get(carsItems),
+      ])
       .then(
         axios.spread((carsColors, carsBrands, carsItems) => {
           setColorsList(carsColors.data.product);
