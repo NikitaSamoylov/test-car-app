@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import SessionProvider from "@/utils/SessionProvider";
 import { getServerSession } from "next-auth";
 import { Roboto } from "next/font/google";
-import '../../styles/globals.scss';
+import '../styles/globals.scss';
 
 const roboto = Roboto({
   weight: "400",
