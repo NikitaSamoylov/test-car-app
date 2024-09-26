@@ -1,13 +1,10 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const nextConfig = {
+  output: "standalone",
   typescript: {
     ignoreBuildErrors: true,
   },
-};
-
-const nextConfig = {
-  output: "standalone",
   images: {
     remotePatterns: [
       {
